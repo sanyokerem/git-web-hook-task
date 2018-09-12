@@ -13,7 +13,7 @@ class CheckGitRepositoryUpdatesCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('app:git:check-updates')
+            ->setName('app:split-repo')
             ->setDescription('Check if there was some changes on a GitHub repository');
     }
 

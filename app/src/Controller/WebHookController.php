@@ -5,20 +5,21 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Flex\Response;
 
 class WebHookController extends Controller
 {
     /**
-     * @Route("/test-webhook/{token}", name="test_web_hook", defaults={"token":""}, methods={"POST"})
+     * @Route("/hook/split-repo/{token}", name="test_web_hook", defaults={"token":""}, methods={"POST"})
      */
     public function testWebHook($token)
     {
-        if ($token == '9WPTDSmLAWcmwcTPnFgKSMjl3qhigqLMKo9KB1ne') {
+        if ($token == $this->getParameter('git_web_hook_token')) {
 
             $fs = new Filesystem();
             $fs->touch('/var/git-web-hook');
         }
 
-        return $this->json([]);
+        return new Response('', 204);
     }
 }
