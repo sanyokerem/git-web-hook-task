@@ -1,34 +1,26 @@
-version: '2'
+version: '3'
 
 services:
   web-hook:
-    image: 'formapro/nginx-php-fpm:latest-all-exts'
     restart: 'always'
-    working_dir: '/jobs_dev/apps/web-hook'
-    depends_on:
-    - 'rabbitmq'
-    - 'mongo'
+    working_dir: '/jobs_dev'
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-    - './apps/web-hook:/jobs_dev/apps/web-hook:cached'
-    - './pkg/php-shared:/jobs_dev/apps/web-hook/vendor/comrade/shared:cached'
-    env_file: 'apps/web-hook/.env'
+    - './:/jobs_dev'
+    depends_on:
+    - 'mongo'
+    env_file: '.env'
     environment:
     - VIRTUAL_HOST=web-hook.loc
-    - NGINX_WEB_ROOT=/jobs_dev/apps/web-hook/public
+    - NGINX_WEB_ROOT=/jobs_dev/public
     - NGINX_PHP_FALLBACK=/index.php
     - NGINX_PHP_LOCATION=^/index\.php(/|$$)
     - APP_DEV_PERMITTED=1
     - SHELL_VERBOSITY=3
-
-  rabbitmq:
-    image: 'enqueue/rabbitmq:latest'
-    restart: 'always'
-    environment:
-    - VIRTUAL_HOST=rabbitmq.jm.loc
-    - VIRTUAL_PORT=15672
-    - RABBITMQ_DEFAULT_USER=guest
-    - RABBITMQ_DEFAULT_PASS=guest
-    - RABBITMQ_DEFAULT_VHOST=comrade
+    ports:
+    - "88:80"
 
   mongo:
     image: 'mongo:3'
@@ -37,11 +29,3 @@ services:
     - "27017:27017"
     volumes:
     - './shared:/shared'
-
-  front:
-    image: 'jwilder/nginx-proxy'
-    restart: 'always'
-    ports:
-    - "80:80"
-    volumes:
-    - '/var/run/docker.sock:/tmp/docker.sock:ro'
