@@ -33,7 +33,7 @@ class WebHookController extends Controller
         $ref = explode('/', $requestContent->ref);
         $branch = end($ref);
 
-        if (preg_match('#^\d+(\.\d+)*$#uis', $branch)) {
+        if (preg_match('#^(\d+(\.\d+)*|master)$#uis', $branch)) {
             $fs = new Filesystem();
             $fs->dumpFile('/var/git-web-hook', $branch);
         }
