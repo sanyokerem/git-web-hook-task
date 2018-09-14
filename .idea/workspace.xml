@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="164bc7f2-0c08-44e3-8219-b0479c11c652" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony-docker-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony-docker-test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/SplitRepoCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/SplitRepoCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/WebHookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WebHookController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +35,12 @@
           <entry key="console" value="1" />
           <entry key="dist" value="1" />
           <entry key="env" value="3" />
-          <entry key="gitignore" value="9" />
+          <entry key="gitignore" value="10" />
           <entry key="html" value="1" />
           <entry key="json" value="2" />
           <entry key="lock" value="1" />
           <entry key="log" value="20" />
-          <entry key="php" value="43" />
+          <entry key="php" value="44" />
           <entry key="phpunit" value="1" />
           <entry key="splitsh-lite" value="1" />
           <entry key="test" value="1" />
@@ -61,8 +55,8 @@
           <entry key="Dockerfile" value="1" />
           <entry key="HTML" value="1" />
           <entry key="JSON" value="4" />
-          <entry key="PHP" value="45" />
-          <entry key="PLAIN_TEXT" value="38" />
+          <entry key="PHP" value="46" />
+          <entry key="PLAIN_TEXT" value="39" />
           <entry key="Twig" value="3" />
           <entry key="YAML" value="41" />
         </counts>
@@ -73,7 +67,7 @@
           <entry key="dist" value="4" />
           <entry key="dummy" value="73" />
           <entry key="env" value="32" />
-          <entry key="gitignore" value="68" />
+          <entry key="gitignore" value="80" />
           <entry key="html" value="86" />
           <entry key="log" value="2" />
           <entry key="php" value="7365" />
@@ -88,7 +82,7 @@
           <entry key="Dockerfile" value="99" />
           <entry key="HTML" value="86" />
           <entry key="PHP" value="7365" />
-          <entry key="PLAIN_TEXT" value="233" />
+          <entry key="PLAIN_TEXT" value="245" />
           <entry key="Twig" value="391" />
           <entry key="YAML" value="410" />
         </counts>
@@ -103,13 +97,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/WebHookController.php">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-              <folding>
-                <element signature="e#34#79#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -178,13 +169,13 @@
         <option value="$USER_HOME$/WORK/test-1/data/test-command" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.env.dist" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/tests/test" />
         <option value="$PROJECT_DIR$/src/EventListener/ExceptionListener.php" />
         <option value="$PROJECT_DIR$/src/Command/SplitRepoCommand.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/WebHookController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -312,11 +303,6 @@
               <item name="symfony-docker-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony-docker-test" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="symfony-docker-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony-docker-test" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -370,12 +356,12 @@
       <workItem from="1536754048942" duration="9940000" />
       <workItem from="1536820774114" duration="21039000" />
       <workItem from="1536906442038" duration="21000" />
-      <workItem from="1536909418047" duration="16339000" />
+      <workItem from="1536909418047" duration="16831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91267000" />
+    <option name="totallyTimeSpent" value="91759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-4" width="1865" height="1084" extended-state="6" />
@@ -504,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -549,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/SplitRepoCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -577,6 +549,20 @@
           <folding>
             <element signature="e#34#79#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/SplitRepoCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
