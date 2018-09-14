@@ -13,13 +13,16 @@ use Symfony\Component\Process\Process;
 
 class SplitRepoCommand extends Command
 {
-    private $gitRepoLink;
+    /**
+     * @var ContainerInterface
+     */
+    private $container;
 
     public function __construct(ContainerInterface $container, string $name = null)
     {
         parent::__construct($name);
 
-        $this->gitRepoLink = $container->getParameter('app.git_repo_link');
+        $this->container = $container;
     }
 
     protected function configure()
@@ -36,29 +39,51 @@ class SplitRepoCommand extends Command
         $output->writeln('Checking ...');
 
         if (!$fs->exists('/var/git-web-hook')) {
-            $output->writeln('There were no updates');
+            $output->writeln('There have been no updates');
+
             return;
         }
 
         $branch = file_get_contents('/var/git-web-hook');
 
-        $fs->remove('/var/git-web-hook');
+        if ($fs->exists('/var/repository')) $fs->remove('/var/repository');
 
-        $process = new Process(sprintf('git clone %s -b %s /var/repository', $this->gitRepoLink, $branch));
-        $process->run();
+        $output->writeln('Repository: ' . $this->container->getParameter('app.git_repo_link'));
 
-        $output->writeln($process->getErrorOutput());
+        $process = new Process(sprintf(
+            'git clone %1$s -b %2$s /var/repository && git checkout -b %2$s ',
+            $this->container->getParameter('app.git_repo_link'),
+            $branch
+        ));
+        $process->start();
+        $process->wait(function ($type, $buffer) use ($output) {
+            if (Process::ERR === $type) {
+                $output->write($buffer);
+            } else {
+                $output->write($buffer);
+            }
+        });
 
-        if (!$fs->exists('/var/repository/test-command')) {
+        $commandFile = '/var/repository' . $this->container->getParameter('app.command_file_path');
+
+        if (!$fs->exists($commandFile)) {
             $output->writeln('Command not found');
+
             return;
         }
 
-        $process = new Process('/var/repository/test-command '.$branch);
-        $process->run();
+        $process = new Process($commandFile);
+        $process->start();
+        $process->wait(function ($type, $buffer) use ($output) {
+            if (Process::ERR === $type) {
+                $output->write($buffer);
+            } else {
+                $output->write($buffer);
+            }
+        });
 
         $fs->remove('/var/repository');
-
+        $fs->remove('/var/git-web-hook');
         $output->writeln($process->getOutput());
         $output->writeln($process->getErrorOutput());
     }

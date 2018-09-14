@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="164bc7f2-0c08-44e3-8219-b0479c11c652" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/.env.dist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/bin/console" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/config/bundles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/config/packages/dev/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/config/packages/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/config/packages/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/config/packages/test/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/config/packages/test/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/config/routes.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/config/services.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/src/Command/CheckGitRepositoryUpdatesCommand.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/src/Controller/WebHookController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/src/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web-hook/symfony.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony-docker-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony-docker-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/SplitRepoCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/SplitRepoCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/WebHookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WebHookController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,13 +23,14 @@
     <session id="400872611">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -57,24 +46,25 @@
           <entry key="json" value="2" />
           <entry key="lock" value="1" />
           <entry key="log" value="20" />
-          <entry key="php" value="34" />
+          <entry key="php" value="43" />
           <entry key="phpunit" value="1" />
           <entry key="splitsh-lite" value="1" />
+          <entry key="test" value="1" />
           <entry key="test-command" value="2" />
           <entry key="twig" value="3" />
-          <entry key="yaml" value="29" />
-          <entry key="yml" value="8" />
+          <entry key="yaml" value="32" />
+          <entry key="yml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Dockerfile" value="1" />
           <entry key="HTML" value="1" />
-          <entry key="JSON" value="3" />
-          <entry key="PHP" value="36" />
+          <entry key="JSON" value="4" />
+          <entry key="PHP" value="45" />
           <entry key="PLAIN_TEXT" value="38" />
           <entry key="Twig" value="3" />
-          <entry key="YAML" value="37" />
+          <entry key="YAML" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -86,55 +76,37 @@
           <entry key="gitignore" value="68" />
           <entry key="html" value="86" />
           <entry key="log" value="2" />
-          <entry key="php" value="6269" />
+          <entry key="php" value="7365" />
           <entry key="test-command" value="54" />
           <entry key="twig" value="391" />
-          <entry key="yaml" value="65" />
-          <entry key="yml" value="302" />
+          <entry key="yaml" value="106" />
+          <entry key="yml" value="304" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dockerfile" value="99" />
           <entry key="HTML" value="86" />
-          <entry key="PHP" value="6269" />
+          <entry key="PHP" value="7365" />
           <entry key="PLAIN_TEXT" value="233" />
           <entry key="Twig" value="391" />
-          <entry key="YAML" value="367" />
+          <entry key="YAML" value="410" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="2" />
+          <entry key="PHP Class.type" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Command/SplitRepoCommand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/WebHookController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+            <state relative-caret-position="369">
+              <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
               <folding>
                 <element signature="e#34#79#0#PHP" expanded="true" />
               </folding>
@@ -160,6 +132,10 @@
       <find>working_dir:\s*'/jobs_dev/apps/web-hook'</find>
       <find>jm.loc</find>
       <find>image</find>
+      <find>\$this-&gt;gitRepoLink</find>
+      <find>run</find>
+      <find>\$branch</find>
+      <find>run\(</find>
     </findStrings>
     <replaceStrings>
       <replace>d&gt;{{ $1 }}</replace>
@@ -168,6 +144,7 @@
       <replace>', '</replace>
       <replace>/web-hook/</replace>
       <replace>/web-hook$1</replace>
+      <replace>$container-&gt;getParameter('app.git_repo_link')</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -197,15 +174,17 @@
         <option value="$USER_HOME$/Downloads/comrade-dev-master/docker-compose.yml" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/src/Command/CheckGitRepositoryUpdatesCommand.php" />
-        <option value="$PROJECT_DIR$/config/services.yaml" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$USER_HOME$/WORK/test-1/data/test-command" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.env.dist" />
-        <option value="$PROJECT_DIR$/src/Controller/WebHookController.php" />
-        <option value="$PROJECT_DIR$/src/Command/SplitRepoCommand.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/tests/test" />
+        <option value="$PROJECT_DIR$/src/EventListener/ExceptionListener.php" />
+        <option value="$PROJECT_DIR$/src/Command/SplitRepoCommand.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/WebHookController.php" />
       </list>
     </option>
   </component>
@@ -308,6 +287,10 @@
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/psr/link" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -322,7 +305,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,24 +315,13 @@
             <path>
               <item name="symfony-docker-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony-docker-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony-docker-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony-docker-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Command" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony-docker-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony-docker-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,18 +368,20 @@
       <workItem from="1536753754053" duration="5000" />
       <workItem from="1536753828591" duration="6000" />
       <workItem from="1536754048942" duration="9940000" />
-      <workItem from="1536820774114" duration="20656000" />
+      <workItem from="1536820774114" duration="21039000" />
+      <workItem from="1536906442038" duration="21000" />
+      <workItem from="1536909418047" duration="16339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74524000" />
+    <option name="totallyTimeSpent" value="91267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-4" width="1865" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20505773" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20945574" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -421,8 +394,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3294979" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49917537" visible="true" weight="0.41841003" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50082463" side_tool="true" weight="0.3294979" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -436,11 +409,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/var/log/dev.log" />
-    <entry file="file://$PROJECT_DIR$/app/vendor/symfony/console/Output/OutputInterface.php" />
-    <entry file="file://$PROJECT_DIR$/app/vendor/symfony/http-foundation/JsonResponse.php" />
-    <entry file="file://$PROJECT_DIR$/app/vendor/symfony/framework-bundle/Controller/ControllerTrait.php" />
-    <entry file="file://$PROJECT_DIR$/app/composer.lock" />
     <entry file="file://$PROJECT_DIR$/app/composer.json" />
     <entry file="file://$PROJECT_DIR$/app/config/routes/dev/twig.yaml" />
     <entry file="file://$PROJECT_DIR$/app/config/routes/dev/web_profiler.yaml" />
@@ -484,13 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="65" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-716" />
@@ -500,13 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -536,16 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/WebHookController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding>
-            <element signature="e#34#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.dist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -560,17 +504,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/SplitRepoCommand.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener/ExceptionListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding>
+            <element signature="e#117#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="831" column="9" selection-start-line="831" selection-start-column="9" selection-end-line="831" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/SplitRepoCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/process/Process.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="303" column="34" selection-start-line="303" selection-start-column="25" selection-end-line="303" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/WebHookController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <folding>
+            <element signature="e#34#79#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -20,7 +20,7 @@ services:
     - APP_DEV_PERMITTED=1
     - SHELL_VERBOSITY=3
     ports:
-    - "88:80"
+    - "80:80"
 
   mongo:
     image: 'mongo:3'
