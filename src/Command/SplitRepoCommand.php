@@ -48,10 +48,11 @@ class SplitRepoCommand extends Command
 
         if ($fs->exists('/var/repository')) $fs->remove('/var/repository');
 
+
         $output->writeln('Repository: ' . $this->container->getParameter('app.git_repo_link'));
 
         $process = new Process(sprintf(
-            'git clone %1$s -b %2$s /var/repository && git checkout -b %2$s ',
+            'mkdir /var/repository; cd /var/repository && git clone %1$s -b %2$s . && git branch %2$s; git checkout %2$s',
             $this->container->getParameter('app.git_repo_link'),
             $branch
         ));
