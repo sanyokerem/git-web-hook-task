@@ -51,8 +51,9 @@ class SplitRepoCommand extends Command
 
         $output->writeln('Repository: ' . $this->container->getParameter('app.git_repo_link'));
 
+
         $process = new Process(sprintf(
-            'mkdir /var/repository; cd /var/repository && git clone %1$s -b %2$s . && git branch %2$s; git checkout %2$s',
+            'git clone %1$s -b %2$s /var/repository',
             $this->container->getParameter('app.git_repo_link'),
             $branch
         ));
@@ -73,7 +74,13 @@ class SplitRepoCommand extends Command
             return;
         }
 
-        $process = new Process($commandFile);
+        $process->setWorkingDirectory('/var/repository');
+        $process->setCommandLine(sprintf('git branch %1$s; git checkout %1$s', $branch));
+        $process->run();
+        $process->setCommandLine('ls -l');
+        $process->run();
+        $output->writeln($process->getOutput());
+        $process->setCommandLine($commandFile);
         $process->start();
         $process->wait(function ($type, $buffer) use ($output) {
             if (Process::ERR === $type) {
@@ -85,7 +92,5 @@ class SplitRepoCommand extends Command
 
         $fs->remove('/var/repository');
         $fs->remove('/var/git-web-hook');
-        $output->writeln($process->getOutput());
-        $output->writeln($process->getErrorOutput());
     }
 }
