@@ -3,29 +3,19 @@ version: '3'
 services:
   web-hook:
     restart: 'always'
-    working_dir: '/jobs_dev'
+    working_dir: '/app'
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-    - './:/jobs_dev'
-    depends_on:
-    - 'mongo'
+    - './:/app'
     env_file: '.env'
     environment:
     - VIRTUAL_HOST=web-hook.loc
-    - NGINX_WEB_ROOT=/jobs_dev/public
+    - NGINX_WEB_ROOT=/app/public
     - NGINX_PHP_FALLBACK=/index.php
     - NGINX_PHP_LOCATION=^/index\.php(/|$$)
     - APP_DEV_PERMITTED=1
     - SHELL_VERBOSITY=3
     ports:
     - "80:80"
-
-  mongo:
-    image: 'mongo:3'
-    restart: 'always'
-    ports:
-    - "27017:27017"
-    volumes:
-    - './shared:/shared'

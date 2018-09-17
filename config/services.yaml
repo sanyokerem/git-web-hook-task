@@ -4,10 +4,10 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'en'
     app.git_web_hook_token: 9WPTDSmLAWcmwcTPnFgKSMjl3qhigqLMKo9KB
     app.git_repo_link: git@github.com:sanyokerem/enqueue-dev.git
     app.command_file_path: /bin/subtree-split
+    app.hook_dir: '%kernel.project_dir%/var/split_repo'
 
 services:
     # default configuration for services in *this* file

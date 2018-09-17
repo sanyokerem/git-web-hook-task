@@ -1,3 +1,9 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+split_repo:
+    path: /hook/split-repo/{token}
+    controller: App\Controller\WebHookController::splitRepo
+    methods: [POST, GET]
+    condition: "request.headers.get('content-type') matches '#application/json#i'"

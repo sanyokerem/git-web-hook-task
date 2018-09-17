@@ -5,24 +5,19 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 class WebHookController extends Controller
 {
-    /**
-     * @Route(
-     *     "/hook/split-repo/{token}",
-     *     name="test_web_hook",
-     *     methods={"POST", "GET"},
-     *     condition="request.headers.get('content-type') matches '#application/json#i'"
-     * )
-     */
-    public function testWebHook(Request $request, $token)
+    public function splitRepo(Request $request, $token)
     {
-        if (!$token === $this->getParameter('app.git_web_hook_token')) return new Response('', 401);
+        if (!$token === $this->getParameter('app.git_web_hook_token')) {
+            return new Response('', 401);
+        }
 
-        if ($request->headers->get('X-GitHub-Event') === 'ping') return new Response('');
+        if ($request->headers->get('X-GitHub-Event') === 'ping') {
+            return new Response('');
+        }
 
         $requestContent = json_decode($request->getContent());
 
@@ -35,10 +30,9 @@ class WebHookController extends Controller
 
         if (preg_match('#^(\d+(\.\d+)*|master)$#uis', $branch)) {
             $fs = new Filesystem();
-            $fs->dumpFile('/var/git-web-hook', $branch);
+            $fs->dumpFile($this->getParameter('app.hook_dir') . '/git-web-hook', $branch);
         }
 
         return new Response('', 204);
-
     }
 }
