@@ -12,13 +12,10 @@
         "version": "1.0.1"
     },
     "symfony/cache": {
-        "version": "v3.4.15"
-    },
-    "symfony/class-loader": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     },
     "symfony/config": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     },
     "symfony/console": {
         "version": "3.3",
@@ -30,22 +27,25 @@
         }
     },
     "symfony/debug": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     },
     "symfony/dependency-injection": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     },
     "symfony/dotenv": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     },
     "symfony/event-dispatcher": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
+    },
+    "symfony/expression-language": {
+        "version": "v4.1.4"
     },
     "symfony/filesystem": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     },
     "symfony/finder": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     },
     "symfony/flex": {
         "version": "1.0",
@@ -66,27 +66,27 @@
         }
     },
     "symfony/http-foundation": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     },
     "symfony/http-kernel": {
-        "version": "v3.4.15"
-    },
-    "symfony/polyfill-apcu": {
-        "version": "v1.9.0"
+        "version": "v4.1.4"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.9.0"
     },
+    "symfony/process": {
+        "version": "v4.1.4"
+    },
     "symfony/routing": {
-        "version": "3.3",
+        "version": "4.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.3",
-            "ref": "4d36f55d8edd7bd88b730754c2d3f3dfc2cd316b"
+            "version": "4.0",
+            "ref": "5f514d9d3b8a8aac3d62ae6a86b18b90ed0c7826"
         }
     },
     "symfony/yaml": {
-        "version": "v3.4.15"
+        "version": "v4.1.4"
     }
 }
