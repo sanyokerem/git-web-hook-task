@@ -34,29 +34,49 @@ class SplitRepoCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $fs = new Filesystem();
+        $finder = new Finder();
+
+        $files = $finder->in($this->container->getParameter('app.hook_dir'))->files();
 
         $output->writeln('Checking ...');
 
-        if (!$fs->exists($this->container->getParameter('app.hook_dir') . '/git-web-hook')) {
+        if (!$files->count()) {
             $output->writeln('There have been no updates');
 
             return;
         }
 
-        $branch = file_get_contents($this->container->getParameter('app.hook_dir') . '/git-web-hook');
+        /** @var SplFileInfo $file */
+        foreach ($files as $file) {
+            var_dump($file->getFilename());
+            if (preg_match('#^git-web-hook#uis', $file->getFilename())) {
+                break;
+            }
 
-        if ($fs->exists($this->container->getParameter('app.hook_dir') . '/repository')) {
-            $fs->remove($this->container->getParameter('app.hook_dir') . '/repository');
+            $output->writeln('There have been no updates');
+
+            return;
+        }
+
+        $branch = $file->getContents();
+
+        $fs = new Filesystem();
+        $fs->remove($file->getRealPath());
+        unset($file);
+
+        $repoPath = sprintf('%s/repository/%s', $this->container->getParameter('app.hook_dir'), $branch);
+
+        if ($fs->exists($repoPath)) {
+            $fs->remove($repoPath);
         }
 
         $output->writeln('Repository: ' . $this->container->getParameter('app.git_repo_link'));
 
         $process = new Process(sprintf(
-            'git clone %1$s -b %2$s %3$s/repository',
+            'git clone %s -b %s %s',
             $this->container->getParameter('app.git_repo_link'),
             $branch,
-            $this->container->getParameter('app.hook_dir')
+            $repoPath
         ));
         $process->start();
         $process->wait(function ($type, $buffer) use ($output) {
@@ -67,11 +87,18 @@ class SplitRepoCommand extends Command
             }
         });
 
-        $commandFile = sprintf(
-            '%s/repository%s',
-            $this->container->getParameter('app.hook_dir'),
-            $this->container->getParameter('app.command_file_path')
-        );
+        if ($process->getExitCode() > 0) {
+            $output->writeln('Error occurred: ' . $process->getExitCodeText());
+
+            return;
+        }
+
+        $process = new Process(sprintf('git branch %s; git checkout %s', $branch, $branch));
+        $process->setWorkingDirectory($repoPath);
+        $process->run();
+        $output->writeln($process->getOutput());
+
+        $commandFile = $repoPath . $this->container->getParameter('app.command_file_path');
 
         if (!$fs->exists($commandFile)) {
             $output->writeln('Command not found');
@@ -79,11 +106,8 @@ class SplitRepoCommand extends Command
             return;
         }
 
-        $process->setWorkingDirectory($this->container->getParameter('app.hook_dir') . '/repository');
-        $process->setCommandLine(sprintf('git branch %1$s; git checkout %1$s', $branch));
-        $process->run();
-        $output->writeln($process->getOutput());
-        $process->setCommandLine($commandFile);
+        $process = new Process($commandFile);
+        $process->setWorkingDirectory($repoPath);
         $process->start();
         $process->wait(function ($type, $buffer) use ($output) {
             if (Process::ERR === $type) {
@@ -93,7 +117,6 @@ class SplitRepoCommand extends Command
             }
         });
 
-        $fs->remove($this->container->getParameter('app.hook_dir') . '/repository');
-        $fs->remove($this->container->getParameter('app.hook_dir') . '/git-web-hook');
+        $fs->remove($repoPath);
     }
 }

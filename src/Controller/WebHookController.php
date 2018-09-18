@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Process\Process;
 
 class WebHookController extends Controller
 {
@@ -22,7 +23,7 @@ class WebHookController extends Controller
         $requestContent = json_decode($request->getContent());
 
         if (!isset($requestContent->ref)) {
-            return new Response('', 404);
+            return new Response('', 400);
         }
 
         $ref = explode('/', $requestContent->ref);
@@ -30,7 +31,7 @@ class WebHookController extends Controller
 
         if (preg_match('#^(\d+(\.\d+)*|master)$#uis', $branch)) {
             $fs = new Filesystem();
-            $fs->dumpFile($this->getParameter('app.hook_dir') . '/git-web-hook', $branch);
+            $fs->dumpFile($this->getParameter('app.hook_dir') . '/git-web-hook-' . $branch, $branch);
         }
 
         return new Response('', 204);

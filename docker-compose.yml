@@ -11,7 +11,6 @@ services:
     - './:/app'
     env_file: '.env'
     environment:
-    - VIRTUAL_HOST=web-hook.loc
     - NGINX_WEB_ROOT=/app/public
     - NGINX_PHP_FALLBACK=/index.php
     - NGINX_PHP_LOCATION=^/index\.php(/|$$)
