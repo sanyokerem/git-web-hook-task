@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -x
+set -e
+
+TAG='latest'
+
+if (( "$#" > 0 ))
+then
+    TAG=$1
+fi
+
+mkdir -p /tmp/web-hook
+rm -rf /tmp/web-hook/*
+
+cp -r ./* /tmp/web-hook
+rm -rf /tmp/web-hook/vendor
+rm -rf /tmp/web-hook/var/cache
+rm -rf /tmp/web-hook/var/logs
+rm -rf /tmp/web-hook/tests
+
+mkdir -p /tmp/web-hook/var/cache/prod
+mkdir -p /tmp/web-hook/var/logs
+chmod -R a+rwX /tmp/web-hook/var
+
+(cd /tmp/web-hook; composer install --prefer-dist --ignore-platform-reqs --no-scripts --optimize-autoloader --no-interaction)
+
+git rev-parse HEAD > /tmp/web-hook/config/version
+date '+%Y-%m-%d %H:%M:%S' > /tmp/web-hook/config/build
+
+cat /tmp/web-hook/config/version;
+cat /tmp/web-hook/config/build;
+
+cp ./.env /tmp/web-hook/.env
+
+(cd /tmp/web-hook; docker build -f Dockerfile-build --rm --pull --force-rm --tag "registry.forma-dev.com/enqueue-dev:$TAG" .)
+
+docker push "registry.forma-dev.com/enqueue-dev:$TAG"
