@@ -36,7 +36,7 @@ class SplitRepoCommand extends Command
     {
         $finder = new Finder();
 
-        $files = $finder->in($this->container->getParameter('app.hook_dir'))->files();
+        $files = $finder->in($this->container->getParameter('app.hook_dir'))->files()->name('#^git-web-hook#uis');
 
         $output->writeln('Checking ...');
 
@@ -46,14 +46,9 @@ class SplitRepoCommand extends Command
             return;
         }
 
-        foreach ($files as $file) {
-            if (preg_match('#^git-web-hook#uis', $file->getFilename())) {
-                break;
-            }
-
-            $output->writeln('There have been no updates');
-
-            return;
+        /** @var SplFileInfo $file */
+        foreach ($files as $k =>  $file) {
+            break;
         }
 
         $branch = $file->getContents();
