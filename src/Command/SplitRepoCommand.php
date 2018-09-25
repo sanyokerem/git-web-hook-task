@@ -46,7 +46,6 @@ class SplitRepoCommand extends Command
             return;
         }
 
-        /** @var SplFileInfo $file */
         foreach ($files as $file) {
             var_dump($file->getFilename());
             if (preg_match('#^git-web-hook#uis', $file->getFilename())) {

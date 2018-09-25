@@ -33,6 +33,6 @@ cat /tmp/web-hook/config/build;
 
 cp ./.env /tmp/web-hook/.env
 
-(cd /tmp/web-hook; docker build -f Dockerfile-build --rm --pull --force-rm --tag "registry.forma-dev.com/split-repo:$TAG" .)
+(cd /tmp/web-hook; docker build -f Dockerfile-build --rm --pull --force-rm --tag "registry.forma-dev.com/enqueue-dev:$TAG" .)
 
-docker push "registry.forma-dev.com/split-repo:$TAG"
+docker push "registry.forma-dev.com/enqueue-dev:$TAG"
